@@ -30,6 +30,14 @@ public class BlogEngineApplication {
     }
 
     @Bean
+    public static ObjectMapper objectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        return objectMapper;
+    }
+
+    @Bean
     public CommandLineRunner runner(BlogService blogService) {
         return args -> {
             try {
@@ -38,22 +46,19 @@ public class BlogEngineApplication {
                 blogService.saveAll(blogPosts);
                 log.info("Blog posts saved");
             } catch (IOException e) {
-                log.warn("Not able to read json file");
+                log.error("Error processing JSON file", e);
             }
         };
     }
 
     private static String readJsonContent() throws IOException {
-        Resource resource = new ClassPathResource(BLOG_JSON_FILE_PATH);
-        InputStream inputStream = resource.getInputStream();
-        return new String(inputStream.readAllBytes());
+        try (InputStream inputStream = new ClassPathResource(BLOG_JSON_FILE_PATH).getInputStream()) {
+            return new String(inputStream.readAllBytes());
+        }
     }
 
     private List<BlogPost> mapJsonToObjects(String jsonContent) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        return objectMapper.readValue(jsonContent, BLOG_POST_TYPE_REFERENCE);
+        return objectMapper().readValue(jsonContent, BLOG_POST_TYPE_REFERENCE);
     }
 
 }
