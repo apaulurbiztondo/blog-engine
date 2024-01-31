@@ -1,6 +1,6 @@
 # Basic Blog Engine
 
-This is a basic blog engine web application built using Java 17 and the Spring Framework. The application displays a list of blog posts on the homepage, allows users to view detailed pages for each blog post, and provides a form to create new blog posts. The project also includes basic styling with CSS and Bootstrap 3 for a modern blog page.
+This is a basic blog engine web application built using Java 17 and the Spring Framework. The application displays a list of blog posts on the homepage, and allows users to view detailed pages for each blog post. The project also includes basic styling with CSS and Bootstrap 3 for a modern blog page.
 
 ## Features
 
