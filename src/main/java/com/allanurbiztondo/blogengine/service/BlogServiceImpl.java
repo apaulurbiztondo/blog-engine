@@ -1,9 +1,10 @@
 package com.allanurbiztondo.blogengine.service;
 
 import java.util.List;
-import java.util.stream.StreamSupport;
+import java.util.Optional;
 
 import com.allanurbiztondo.blogengine.entity.BlogPost;
+import com.allanurbiztondo.blogengine.error.ResourceNotFoundException;
 import com.allanurbiztondo.blogengine.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,10 +31,12 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public BlogPost getPostByUrl(String url) {
-        Iterable<BlogPost> allBlogPosts = findAll();
-        return StreamSupport.stream(allBlogPosts.spliterator(), false)
-                .filter(post -> post.getUrl().equals(String.format("/%s/", url)))
-                .findFirst()
-                .orElse(null);
+        String formattedUrl = String.format("/%s/", url);
+        Optional<BlogPost> blogPost = Optional.ofNullable(blogRepository.getPostByUrl(formattedUrl));
+        return blogPost.orElseThrow(this::blogPostNotFound);
+    }
+
+    private ResourceNotFoundException blogPostNotFound() {
+        return new ResourceNotFoundException("Blog post not found.");
     }
 }

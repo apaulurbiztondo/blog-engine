@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="/blog/home" class="btn btn-primary" role="button">Home</a>
         <h1>${post.title}</h1>
         <p>${post.publicationDate}</p>
         <div>${post.content}</div>
