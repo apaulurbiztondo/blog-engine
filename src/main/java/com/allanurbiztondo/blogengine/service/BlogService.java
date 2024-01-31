@@ -7,6 +7,6 @@ import com.allanurbiztondo.blogengine.entity.BlogPost;
 
 public interface BlogService {
     Iterable<BlogPost> findAll();
-
     void saveAll(List<BlogPost> blogPosts);
+    BlogPost getPostByUrl(String url);
 }
