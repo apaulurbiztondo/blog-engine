@@ -1,10 +1,10 @@
 # Basic Blog Engine
 
-This is a basic blog engine web application built using Java 17 and the Spring Framework. The application displays a list of blog posts on the homepage, and allows users to view detailed pages for each blog post. The project also includes basic styling with CSS and Bootstrap 3 for a modern blog page.
+This is a basic blog engine web application built using Java 17, Spring Framework, and FreeMarker. The application displays a list of blog posts on the homepage, and allows users to view detailed pages for each blog post. The project also includes basic styling with CSS and Bootstrap 3 for a modern blog page.
 
 ## Features
 
-1. Load the blog posts from JSON file to in-memory database(h2)
+1. Load the blog posts from JSON file to in-memory database(h2).
 2. Fetch the list of blog post from the database and display on the homepage.
 3. Each blog post has a title, content, and publication date.
 4. Allow users to view a detailed page for each blog post.
@@ -20,9 +20,11 @@ This is a basic blog engine web application built using Java 17 and the Spring F
 
 1. Clone the repository.
 2. Open the project in your preferred IDE.
-3. Build and run the application.
-4. Access the application at `http://localhost:8080/blog/home`.
-5. Access the in-memory database at `http://localhost:8080/h2-console`.(Optional)
+3. Run mvn clean install.
+4. Change the schema.sql SQL Dialect to h2. ![image](https://github.com/apaulurbiztondo/blog-engine/assets/19607548/fd5489aa-4ae1-4238-b2b1-5d2f9796208a)
+5. Build and run the application.
+6. Access the application at `http://localhost:8080/blog/home`.
+7. Access the in-memory database at `http://localhost:8080/h2-console`.(Optional)
 
 ## Tools and Dependencies
 
