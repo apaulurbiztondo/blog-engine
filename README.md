@@ -13,31 +13,8 @@ This is a basic blog engine web application built using Java 17 and the Spring F
 7. Styling with CSS and Bootstrap 3.
 
 ## Project structure
-src
-|-- main
-|   |-- java
-|   |   -- com
-|   |       -- allanurbiztondo
-|   |           -- blogengine
-|   |               |-- controller
-|   |               |   -- BlogController.java
-|   |               |-- entity
-|   |               |   -- BlogPost.java
-|   |               |-- repsitory
-|   |               |   -- BlogRepository.java
-|   |               |-- service
-|   |               |   -- BlogService.java
-|   |               |   -- BlogServiceImpl.java
-|   |               -- BlogEngineApplication.java
-|   -- resources
-|       |-- static
-|       |   -- css
-|       |       -- styles.css
-|       -- templates
-|           |-- blog
-|           |   -- home.ftl
-|           |   -- post.ftl
-|       -- application.properties
+![image](https://github.com/apaulurbiztondo/blog-engine/assets/19607548/c1907fa3-db51-4f7c-948a-9484e4bfccbb)
+
 
 ## Getting Started
 
@@ -53,6 +30,7 @@ src
 - Maven
 - Git
 - Intellij IDEA
+- Bootstrap 3
 - Spring Boot Starter Data JDBC
 - Spring Boot Starter Freemarker
 - Spring Boot Starter Web
