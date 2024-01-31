@@ -13,7 +13,8 @@ This is a basic blog engine web application built using Java 17, Spring Framewor
 7. Styling with CSS and Bootstrap 3.
 
 ## Project structure
-![image](https://github.com/apaulurbiztondo/blog-engine/assets/19607548/c1907fa3-db51-4f7c-948a-9484e4bfccbb)
+![image](https://github.com/apaulurbiztondo/blog-engine/assets/19607548/56bfa23e-71f1-4f07-be6b-7482ee1fd433)
+
 
 
 ## Getting Started
